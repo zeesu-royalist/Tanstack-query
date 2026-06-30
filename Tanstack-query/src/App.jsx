@@ -3,11 +3,14 @@ import { fetchPost } from './API.js'
 
 
 function App() {
-  const { data } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPost,
   })
 
+if (isLoading) return ‹p>Loading ... ‹/ p>
+if (isError) return <p>Something went wrong! </ p>
+  
   return (
     <>
       {data?.map((element) => {
