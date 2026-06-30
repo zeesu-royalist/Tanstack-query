@@ -9,7 +9,7 @@ function App() {
   })
 
 if (isLoading) return ‹p>Loading ... ‹/ p>
-if (isError) return <p>Something went wrong! </ p>
+if (isError) return <p>Error : {error.message || "Something went wrong!"} </ p>
   
   return (
     <>
